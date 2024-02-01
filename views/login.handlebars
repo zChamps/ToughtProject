@@ -1,0 +1,21 @@
+<form action="/login" method="post" class="flex flex-col items-center justify-center text-left mt-12 gap-12">
+    <div>
+        <h1 class="text-2xl">Login</h1>
+    </div>
+    <div class="flex flex-col gap-5">
+        <div class="flex flex-col">
+            <label for="email">E-mail</label>
+            <input type="email" name="email" id="email" placeholder="Digite seu e-mail"
+                class="px-5 pr-80 py-2 rounded-lg mt-2">
+        </div>
+        <div class="flex flex-col">
+            <label for="password">Senha</label>
+            <input type="password" name="password" id="password" placeholder="Digite sua senha"
+                class="px-5 pr-80 py-2 rounded-lg mt-2">
+        </div>
+    <input type="submit" value="Login" class="px-4 py-2 rounded-lg w-32">
+    </div>
+    <div>
+        <p>Ainda não tem conta? <a href="/register">Clique aqui!</a></p>
+    </div>
+</form>

@@ -1,0 +1,24 @@
+<div class="flex justify-between px-10 my-10">
+    <h1 class="text-lg">dashboard</h1>
+    <a href="/dashboard/add">Criar Pensamento</a>
+</div>
+
+
+{{#if toughts}}
+
+{{#each toughts}}
+<div class="flex justify-between mx-10 p-2 border-4 border-red">
+    <h2>{{this.title}}</h2>
+    <div>
+        <a href="/tought/edit/{{this.id}}">Editar</a>
+        <a href="/tought/delete/{{this.id}}">Excluir</a>
+    </div>
+</div>
+{{/each}}
+{{else}}
+
+
+<h1>Nenhum pensamento por enquanto....</h1>
+
+
+{{/if}}

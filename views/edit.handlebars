@@ -1,0 +1,13 @@
+<div class="p-20">
+    <h1>Editando o Pensamento: <span class="font-extrabold text-3xl">{{tought.title}}</span></h1>
+
+    <form action="/tought/edit/{{tought.id}}" method="post" class="flex flex-col gap-12">
+
+        <label for="editText" class="flex gap-8 mt-40 items-center">
+            <p>Escreva seu pensamento atualizado!</p>
+            <input class="px-8 py-3 w-80 border" type="text" name="editText" id="editText" value="{{tought.title}}">
+        </label>
+
+        <input class="px-8 py-3 w-80 border" type="submit" value="Atualizar Pensamento!">
+    </form>
+</div>
