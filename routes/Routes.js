@@ -26,4 +26,7 @@ router.post("/dashboard/add", checkAuth , ToughtController.dashBoardControllerAd
 router.get("/tought/edit/:id", checkAuth , ToughtController.dashBoardControllerEditGet)
 router.post("/tought/edit/:id", checkAuth , ToughtController.dashBoardControllerEditPost)
 
+router.post("/tought/delete/:id", checkAuth, ToughtController.dashBoardControllerDeletePost)
+
+
 module.exports = router

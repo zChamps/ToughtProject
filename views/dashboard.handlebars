@@ -9,9 +9,9 @@
 {{#each toughts}}
 <div class="flex justify-between mx-10 p-2 border-4 border-red">
     <h2>{{this.title}}</h2>
-    <div>
+    <form action="/tought/delete/{{this.id}}" method="post">
         <a href="/tought/edit/{{this.id}}">Editar</a>
-        <a href="/tought/delete/{{this.id}}">Excluir</a>
+        <input type="submit" value="Excluir">
     </div>
 </div>
 {{/each}}

@@ -3,8 +3,12 @@ const Tought = require("../models/Tought")
 const User = require("../models/User")
 
 
-const homeController = (req, res) => {
-    res.render("home")
+const homeController = async (req, res) => {
+
+    const toughts = await Tought.findAll({raw: true, include: User})
+    console.log(toughts)
+
+    res.render("home", {toughts})
 }
 
 const registerControllerGet = (req, res) => {
@@ -124,6 +128,14 @@ const dashBoardControllerEditPost = async (req, res) => {
 
 }
 
+const dashBoardControllerDeletePost = async (req, res) => {
+    const toughtId = req.params.id
+    const userId = req.session.userid
+
+    await Tought.destroy({where: {id: toughtId, UserId: userId}})
+
+    res.redirect("/dashboard")
+}
 
 module.exports = {
     homeController,
@@ -136,5 +148,6 @@ module.exports = {
     dashBoardControllerAddGet,
     dashBoardControllerAddPost,
     dashBoardControllerEditGet,
-    dashBoardControllerEditPost
+    dashBoardControllerEditPost,
+    dashBoardControllerDeletePost
 }
